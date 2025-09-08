@@ -13,8 +13,15 @@ def insertion_sort_desc(arr):
         arr[j + 1] = Val
     return arr
 
-#Test 1
-arr = [2, 4, 6, 6, 10, 5]
-print("Original List:", arr)
-sorted_numbers = insertion_sort_desc(arr)
-print("List in descending order:", sorted_numbers)
+def main():
+    try:
+        prompt = input("Enter numbers (Use Space to Separate): ")
+        arr = [int(x) for x in prompt.strip().split()]
+        insertion_sort_desc(arr)
+        print("Sorted in decreasing order:", arr)
+    except ValueError:
+        print("Invalid input. Please enter only integers separated by spaces.")
+
+if __name__ == "__main__":
+    main()
+
